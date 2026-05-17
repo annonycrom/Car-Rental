@@ -73,7 +73,6 @@ public class dashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtDays = new javax.swing.JTextField();
         btnBook = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
         cmbCarModel = new javax.swing.JComboBox<>();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -84,6 +83,7 @@ public class dashboard extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         rentalTable = new javax.swing.JTable();
+        btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -126,13 +126,6 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setText("Cancel Booking");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
         cmbCarModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Toyota Vios - 1200", "Toyota Innova - 2500", "Toyota Fortuner - 3500", "Honda Civic - 1800", "Honda City - 1400", "Mitsubishi Mirage - 1100", "Mitsubishi Xpander - 2200", "Mitsubishi Montero - 3400", "Nissan Almera - 1300", "Nissan Navara - 2800", "Nissan Terra - 3300", "Ford Ranger - 2900", "Ford Everest - 3500", "Ford Mustang - 6500", "Hyundai Accent - 1200", "Hyundai Staria - 4000", "Suzuki Swift - 1100", "Suzuki Ertiga - 1600", "Kia Picanto - 1000", "Kia Seltos - 2000" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -152,9 +145,7 @@ public class dashboard extends javax.swing.JFrame {
                             .addComponent(cmbCarModel, 0, 200, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnDelete)
-                            .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -174,8 +165,6 @@ public class dashboard extends javax.swing.JFrame {
                 .addComponent(txtDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnBook)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -240,6 +229,13 @@ public class dashboard extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(rentalTable);
 
+        btnDelete.setText("Cancel Booking");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -248,13 +244,19 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(291, 291, 291)
+                .addComponent(btnDelete)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnDelete)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Admin Records", jPanel5);
