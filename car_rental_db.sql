@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2026 at 09:11 AM
+-- Generation Time: May 17, 2026 at 09:21 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -41,8 +41,20 @@ CREATE TABLE `rentals` (
 --
 -- Table structure for table `users`
 --
--- Error reading structure for table car_rental_db.users: #1932 - Table 'car_rental_db.users' doesn't exist in engine
--- Error reading data for table car_rental_db.users: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `car_rental_db`.`users`' at line 1
+
+CREATE TABLE `users` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `role` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`username`, `password`, `role`) VALUES
+('admin', 'admin123', 'Admin'),
+('user', 'user123', 'User');
 
 --
 -- Indexes for dumped tables
@@ -53,6 +65,12 @@ CREATE TABLE `rentals` (
 --
 ALTER TABLE `rentals`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
